@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Access Code</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/87ac7f1e-d9ff-456a-b9e6-77d7aeed6f4a/5a2fdc18-4b2b-4b03-96b8-b3fe44a44c6b/FR-fr-20230220-popsignuptwoweeks-perspective_alpha_website_small.jpg'); 
+            background-size: cover;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        #login-container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 350px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #e50914;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f40612;
+        }
+        #error-message {
+            margin-top: 15px;
+            color: #e50914;
+        }
+        #main-content {
+            display: none;
+            width: 100%;
+            height: 100vh;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container">
+        <h1>Access Code</h1>
+        <input type="text" id="access-code" placeholder="Enter your access code">
+        <button onclick="verifyCode()">Submit</button>
+        <p id="error-message" style="display: none;">Incorrect code. Please try again.</p>
+    </div>
+
+    <div id="main-content">
+        <iframe src="about:blank" id="content-frame"></iframe>
+    </div>
+
+    <script>
+        const validCode = '12345'; // Remplacez par votre code d'accès
+
+        function verifyCode() {
+            const inputCode = document.getElementById('access-code').value;
+            if (inputCode === validCode) {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                document.getElementById('content-frame').src = 'https://iosmirror.cc/home'; // Charge le lien dans l'iframe
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
